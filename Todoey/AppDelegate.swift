@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Todoey
 //
-//  Created by Development on 2019-01-10.
+//  Created by Milan Gajic on 2019-01-10.
 //  Copyright © 2019 dropmedia.se. All rights reserved.
 //
 
