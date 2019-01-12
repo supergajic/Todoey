@@ -12,8 +12,14 @@ class TodoListViewController: UITableViewController {
 
     var itemArray = ["Eggs", "Milk", "Bread"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        
+        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+            itemArray = items
+        }
     }
 
     // MARK - Setup the initial TableView
@@ -54,6 +60,8 @@ class TodoListViewController: UITableViewController {
             
             if textField.text!.count > 0 {
                 self.itemArray.append(textField.text!)
+                
+                self.defaults.set(self.itemArray, forKey: "TodoListArray")
             }
             
             self.tableView.reloadData()
